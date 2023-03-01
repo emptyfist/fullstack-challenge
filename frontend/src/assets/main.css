@@ -1,0 +1,23 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    filter: blur(3px);
+    z-index: 9;
+}
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    width: 400px;
+    height: 300px;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 200px);
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 3px 2px 9px 2px #bbb;
+}
