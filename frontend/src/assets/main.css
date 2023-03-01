@@ -21,3 +21,19 @@
     border-radius: .5rem;
     box-shadow: 3px 2px 9px 2px #bbb;
 }
+
+.users table {
+    width: 1200px;
+    border: 1px solid #bbb;
+}
+
+.users table th {
+    text-align: left;
+}
+
+.users table tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 2fr 1fr;
+    padding: .25rem .5rem
+}
