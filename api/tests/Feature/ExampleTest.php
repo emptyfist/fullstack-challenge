@@ -22,6 +22,20 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_the_weather_returns_a_successful_response()
+    {
+        User::factory(20)->create();
+        $user = User::first();
+
+        $response = $this->get('/' . $user->latitude . '/' . $user->longitude);
+
+        $response->assertStatus(200);
+
+        $content = $response->decodeResponseJson();
+
+        $this->assertEquals($content['status'], 'success');
+    }
+
     public function test_database_works()
     {
         User::factory(20)->create();

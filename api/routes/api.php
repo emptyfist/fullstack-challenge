@@ -21,7 +21,14 @@ Route::get('/', function () {
     ]);
 });
 
-
+/**
+ * Get weather information with latitude and longitude
+ * 
+ * @param $latitude
+ * @param $longitude
+ * 
+ * @return ['status' => '', 'data' => '']
+ */
 Route::get('/{latitude}/{longitude}', function (Request $request, $latitude, $longitude) {
     $curl = curl_init();
     $data = ['lat' => $latitude, 'lon' => $longitude, 'appid' => env('APP_WEATHER_KEY')];
