@@ -25,6 +25,7 @@ Using Laravel and VueJS, create an application which shows the weather for a set
 
 ### API
 - Navigate to `/api` folder
+- Set `APP_WEATHER_KEY` with your API key registered at `openweathermap.org` 
 - Ensure version docker installed is active on host
 - Copy .env.example: `cp .env.example .env`
 - Start docker containers `docker compose up` (add `-d` to run detached)
