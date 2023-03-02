@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import ApiTest from "@/components/ApiTest.vue";
 import Users from "@/components/Users.vue";
 </script>
 
 <template>
-  <main>
+  <main class="w-100 p-3">
     <Users />
     <!-- <api-test></api-test> -->
   </main>

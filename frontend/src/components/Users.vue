@@ -1,11 +1,13 @@
 <template>
   <template v-if="users.length < 1">
-    Waiting....
+    <div class="w-full text-center font-bold text-2xl">
+      Waiting....
+    </div>
   </template>
-  <div v-else class="users">
-    <table>
+  <div v-else class="w-[80%] flex justify-around mx-auto">
+    <table class="w-full border border-2 border-border-gray-700">
       <thead>
-        <tr>
+        <tr class="border border-2 font-bold text-1xl text-left">
           <th>Name</th>
           <th>Email</th>
           <th>Location</th>
@@ -21,20 +23,23 @@
         </tr>
       </tbody>
     </table>
+
     <div v-if="showUserModal">
-      <div class="modal-background" @click="closeModal"></div>
-      <div class="modal">
-        <h2>{{ selectedUser.name }}'s Weather Report</h2>
+      <div class="modal-background fixed top-0 left-0 w-screen h-screen z-10 bg-[#000000aa] backdrop-sepia-[.2]" @click="closeModal"></div>
+      <div class="modal fixed w-[400px] h-[300px] rounded-lg p-3 z-20 bg-white shadow-[3px_2px_9px_2px_rgba(111, 111, 11, 0.8)]">
+        <h2 class="font-bold text-lg pb-2 border-b-2">{{ selectedUser.name }}'s Weather Report</h2>
         <template v-if="isValid">
-          <p>Last Updated: {{ selectedUser.updated }}</p>
-          <p>Location: {{ selectedUser.location }}</p>
-          <p>Temperature: {{ selectedUser.temp }}</p>
-          <p>Wind Speed: {{ selectedUser.wind }}</p>
-          <p>Current Weather: {{ selectedUser.forecast }}</p>
-          <p>Detailed: {{ selectedUser.detailed }}</p>
+          <div class="w-full h-full flex flex-col justify-around">
+            <p><span class="font-bold">Last Updated:</span> {{ selectedUser.updated }}</p>
+            <p><span class="font-bold">Location:</span> {{ selectedUser.location }}</p>
+            <p><span class="font-bold">Temperature:</span> {{ selectedUser.temp }}</p>
+            <p><span class="font-bold">Wind Speed:</span> {{ selectedUser.wind }}</p>
+            <p><span class="font-bold">Current Weather:</span> {{ selectedUser.forecast }}</p>
+            <p><span class="font-bold">Detailed:</span> {{ selectedUser.detailed }}</p>
+          </div>
         </template>
         <template v-else>
-          <p>Location is not correct</p>
+          <p class="text-red-500">Location is not correct</p>
         </template>
       </div>
     </div>
